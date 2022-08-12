@@ -18,7 +18,7 @@ public class CuentaCorriente extends Cliente {// Hereda de la clase cliente
     private long numeroCuenta;
     private String fechaApertura;
     private double saldo, porcentajeInteres, valorPermitido;
-    // Podemos hacer varios Constructores con atributos dependiendo de los casos
+    // Podemos hacer varios Constructores con ciertos atributos dependiendo de los casos
     // Constructor vacio en caso que lo le asignemos parametros
     public CuentaCorriente() {
     }
