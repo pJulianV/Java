@@ -18,11 +18,11 @@ public class CuentaCorriente extends Cliente {// Hereda de la clase cliente
     private long numeroCuenta;
     private String fechaApertura;
     private double saldo, porcentajeInteres, valorPermitido;
-
-    // Metodo vacio en caso que lo le asignemos parametros
+    // Podemos hacer varios Constructores con atributos dependiendo de los casos
+    // Constructor vacio en caso que lo le asignemos parametros
     public CuentaCorriente() {
     }
-    // Metodo con solo los atributos de CuentaCorriente 
+    // Constructor con solo los atributos de CuentaCorriente 
     public CuentaCorriente(long numeroCuenta, String fechaApertura, double saldo, double porcentajeInteres,
             double valorPermitido) {
         this.numeroCuenta = numeroCuenta;
@@ -32,7 +32,7 @@ public class CuentaCorriente extends Cliente {// Hereda de la clase cliente
         this.valorPermitido = valorPermitido;
     }
     
-    // Metodo que funciona cuando se asignan atributos de la clase cliente y atributos
+    // Constructor que funciona cuando se asignan atributos de la clase cliente y atributos
     // propios de la clase Cuenta Corriente
     public CuentaCorriente(long numeroCuenta, String fechaApertura, double saldo, double porcentajeInteres,double valorPermitido,
             long documentoIdentidad, String nombre, int numeroCelular, String direccion){
