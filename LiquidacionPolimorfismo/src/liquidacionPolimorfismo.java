@@ -23,7 +23,7 @@ public class liquidacionPolimorfismo {
             saldo = consola.nextDouble();
             System.out.println("Ingrese tipo cuenta (1: 1.5% , 2: 1.7% , 3: 1.6%):");
             tipoCuentaInteres = consola.nextInt();
-            objCuenta = new Cuenta(numeroCuenta, fechaApertura, saldo, tipoCuentaInteres);
+            objCuenta = new Cuenta(numeroCuenta, fechaApertura, tipoCuentaInteres, saldo);
             interes = objCuenta.calcular_interes();
             
             case 2:

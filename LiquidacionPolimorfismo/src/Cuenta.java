@@ -5,22 +5,22 @@ package LiquidacionPolimorfismo.src;
 public class Cuenta extends Cliente {
     private long numeroCuenta;
     private String fechaApertura;
-    private double saldo;
     private int tipoCuenta;
+    private double saldo;
     
-    public Cuenta(long numeroCuenta, String fechaApertura, double saldo, int tipoCuenta) {
+    public Cuenta(long numeroCuenta, String fechaApertura, int tipoCuenta, double saldo) {
         this.numeroCuenta = numeroCuenta;
         this.fechaApertura = fechaApertura;
-        this.saldo = saldo;
         this.tipoCuenta = tipoCuenta;
+        this.saldo = saldo;
     }
     
-    public Cuenta(long numeroCuenta, String fechaApertura, double saldo, int tipoCuenta,long documentoIdentidad, String nombre, int numeroCelular, String direccion) {
-        super(documentoIdentidad, nombre, numeroCelular, direccion);
+    public Cuenta(long numeroCuenta, String fechaApertura, int tipoCuenta , double saldo, long documentoIdentidad, String nombre,String correo, int numeroCelular, String direccion) {
+        super(documentoIdentidad, nombre, correo,numeroCelular, direccion);
         this.numeroCuenta = numeroCuenta;
         this.fechaApertura = fechaApertura;
-        this.saldo = saldo;
         this.tipoCuenta = tipoCuenta;
+        this.saldo = saldo;
     }
     
     public Cuenta() {
@@ -37,17 +37,17 @@ public class Cuenta extends Cliente {
     private String getFechaApertura () {
         return fechaApertura;
     }
-    private void setSaldo(double saldo){
-        this.saldo = saldo;
-    }
-    private double getSaldo(){
-        return saldo;
-    }
     private void setTipoCuenta(int tipoCuenta){
         this.tipoCuenta = tipoCuenta;
     }
     private int getTipoCuenta(){
         return tipoCuenta;
+    }
+    private void setSaldo(double saldo){
+        this.saldo = saldo;
+    }
+    private double getSaldo(){
+        return saldo;
     }
     
     public double calcular_interes(){

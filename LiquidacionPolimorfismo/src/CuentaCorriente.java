@@ -34,9 +34,9 @@ public class CuentaCorriente extends Cliente {// Hereda de la clase cliente
     
     // Constructor que funciona cuando se asignan atributos de la clase cliente y atributos
     // propios de la clase Cuenta Corriente
-    public CuentaCorriente(long numeroCuenta, String fechaApertura, double saldo, double porcentajeInteres,double valorPermitido,
-            long documentoIdentidad, String nombre, int numeroCelular, String direccion){
-        super(documentoIdentidad, nombre, numeroCelular, direccion);
+    
+    public CuentaCorriente(long numeroCuenta, String fechaApertura, double saldo, double porcentajeInteres,double valorPermitido,long documentoIdentidad, String nombre, String correo, int numeroCelular, String direccion){
+        super(documentoIdentidad, nombre, correo, numeroCelular, direccion);
         this.numeroCuenta = numeroCelular;
         this.fechaApertura = fechaApertura;
         this.saldo = saldo; 
@@ -75,6 +75,6 @@ public class CuentaCorriente extends Cliente {// Hereda de la clase cliente
         return valorPermitido;
     }
     public double calcular_interes() {
-        return this.getSaldo() * this.getPorcentajeInteres();
+        return this.getSaldo() * this.getPorcentajeInteres()/100;
     }
 }

@@ -11,15 +11,17 @@ package LiquidacionPolimorfismo.src;
 public class Cliente {
     private long documentoIdentidad;
     private String nombre;
+    private String correo;
     private int numeroCelular;
     private String direccion;
     
     public Cliente(){
     }
 
-    public Cliente(long documentoIdentidad, String nombre, int numeroCelular, String direccion) {
+    public Cliente(long documentoIdentidad, String nombre,String correo, int numeroCelular, String direccion) {
         this.documentoIdentidad = documentoIdentidad;
         this.nombre = nombre;
+        this.correo = correo;
         this.numeroCelular = numeroCelular;
         this.direccion = direccion;
     }
@@ -35,6 +37,12 @@ public class Cliente {
     }
     public String getNombre(){
         return nombre;
+    }
+    public void setCorreo(String correo){
+        this.correo = correo;
+    }
+    public String getCorreo(){
+        return correo;
     }
     public void setNumeroCelular(int numeroCelular) {
         this.numeroCelular = numeroCelular;
