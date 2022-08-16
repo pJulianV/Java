@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="clase_abstracta">
+  <ClassDiagramComponents>
+    <Class name="Clase_abstracta" package="clase_abstracta" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Credito" package="clase_abstracta" visibility="public" isAbstract="true" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="monto" type="double" visibility="private"/>
+        <Field name="interes" type="double" visibility="private"/>
+        <Field name="plazo" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="monto"/>
+          <Argument type="double" name="interes"/>
+          <Argument type="int" name="plazo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMonto" returnType="double" visibility="public"/>
+        <Method name="setMonto" returnType="void" visibility="public">
+          <Argument type="double" name="monto"/>
+        </Method>
+        <Method name="getInteres" returnType="double" visibility="public"/>
+        <Method name="setInteres" returnType="void" visibility="public">
+          <Argument type="double" name="interes"/>
+        </Method>
+        <Method name="getPlazo" returnType="int" visibility="public"/>
+        <Method name="setPlazo" returnType="void" visibility="public">
+          <Argument type="int" name="plazo"/>
+        </Method>
+        <Method name="calcular_cuota" returnType="double" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="CreditoEmpresarial" package="clase_abstracta" visibility="public" xPosition="-3.0" yPosition="439.0">
+      <Fields>
+        <Field name="valor_interes_total" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="monto"/>
+          <Argument type="double" name="interes"/>
+          <Argument type="int" name="plazo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getValor_interes_total" returnType="double" visibility="public"/>
+        <Method name="setValor_interes_total" returnType="void" visibility="public">
+          <Argument type="double" name="valor_interes_total"/>
+        </Method>
+        <Method name="calcular_cuota" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CreditoEspecial" package="clase_abstracta" visibility="public" xPosition="398.0" yPosition="467.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="monto"/>
+          <Argument type="double" name="interes"/>
+          <Argument type="int" name="plazo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcular_cuota" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CreditoPersonal" package="clase_abstracta" visibility="public" xPosition="678.0" yPosition="268.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="monto"/>
+          <Argument type="double" name="interes"/>
+          <Argument type="int" name="plazo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcular_cuota" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="clase_abstracta.CreditoEspecial" target="clase_abstracta.Credito"/>
+    <IsRelation name="is" source="clase_abstracta.CreditoEmpresarial" target="clase_abstracta.Credito"/>
+    <IsRelation name="is" source="clase_abstracta.CreditoPersonal" target="clase_abstracta.Credito"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

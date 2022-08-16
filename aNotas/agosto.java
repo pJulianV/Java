@@ -6,11 +6,16 @@ package aNotas;
     // ? Paso 2: 
     // ? Paso 3: Agregacion Acumulacion 
     // ? Paso 4:
-    // ? Paso 5: Asociacion
+    // ? Paso 5: Asociacion, Herencia - Generalizacion, Dependencia
 
 // * 13.08.SA
 
     // En las clases abstractas se crean metodos sobreescribibles
-    // Forzar al compilador a revisar que se este sobrescribiendo correctamente el
+    // @Override = Forzar al compilador a revisar que se este sobrescribiendo correctamente el
     // metodo
-    //
+
+    // Las clase abstractas y las interfases tienen en comun el sobrescribir
+
+    // ? Cual es la diferencia principal entre clase abstracta e interfas
+
+    // Se puede generar codigo (OOP) con easyUML, pog!
