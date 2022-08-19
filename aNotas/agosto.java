@@ -19,3 +19,12 @@ package aNotas;
     // ? Cual es la diferencia principal entre clase abstracta e interfas
 
     // Se puede generar codigo (OOP) con easyUML, pog!
+
+// * 17.08.MI
+    // Controles visuales:
+    // Eventos: Son los sucesos que hacen que cierta accion conlleve una ejecucion
+    // Eventos visuales
+    // Propiedades: Caracteristicas (titulo, nombre, tamaño, color)
+    // Eventos: Acciones
+
+    // Aprender a usar Interfas Grafica de Usuario(GUI) Swing J-Frame (Programas sin terminales :>)
