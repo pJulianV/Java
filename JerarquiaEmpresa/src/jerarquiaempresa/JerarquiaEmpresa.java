@@ -3,7 +3,8 @@ package jerarquiaempresa;
 public class JerarquiaEmpresa {
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        Empleado objEmpleado;
+        Secretario objSecretario;
     }
     
 }
