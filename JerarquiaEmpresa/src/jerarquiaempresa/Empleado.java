@@ -28,10 +28,10 @@ public class Empleado {
     public String getTelefono() {
         return telefono;
     }
-    public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
     public String getDireccion() {
-        return Direccion;
+        return direccion;
     }
 }
