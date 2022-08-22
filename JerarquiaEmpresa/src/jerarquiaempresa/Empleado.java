@@ -2,23 +2,26 @@
 package jerarquiaempresa;
 
 public abstract class Empleado {
-    private String nombre;
+    String nombre; // El nombre no es privado porque lo queremos modificar
     private String apellido;
     private String dni;
     private String direccion;
-    private String telefono;
-    private String salario;
     private String añosEmpresa;
+    private String telefono;
+    double salario; // El salario no es privado porque lo queremos modificar
+    
 
     public Empleado(){}
     public Empleado(String nombre, String apellido, String dni, String direccion,
-            String telefono, String salario) {
+            String añosEmpresa, String telefono, double salario) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.direccion = direccion;
+        this.añosEmpresa = añosEmpresa;
         this.telefono = telefono;
         this.salario = salario;
+
     }
 
     public String getNombre() {
@@ -52,6 +55,14 @@ public abstract class Empleado {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+    
+    public String getAñosEmpresa() {
+        return añosEmpresa;
+    }
+
+    public void setAñosEmpresa(String añosEmpresa) {
+        this.añosEmpresa = añosEmpresa;
+    }
 
     public String getTelefono() {
         return telefono;
@@ -61,23 +72,17 @@ public abstract class Empleado {
         this.telefono = telefono;
     }
 
-    public String getSalario() {
+    public double getSalario() {
         return salario;
     }
 
-    public void setSalario(String salario) {
+    public void setSalario(double salario) {
         this.salario = salario;
     }
 
-    public String getAñosEmpresa() {
-        return añosEmpresa;
-    }
-
-    public void setAñosEmpresa(String añosEmpresa) {
-        this.añosEmpresa = añosEmpresa;
-    }
     public void imprimir(){
-        System.out.println(nombre + " || " + apellido + " || " + dni + " || " + 
-                direccion + " || " + telefono + " || " + salario);
+        System.out.println(this.nombre + " || " + this.apellido + " || " + this.dni + " || " + 
+                this.direccion + " || " + this.añosEmpresa + " || " + this.telefono + " || " + 
+                this.salario);
     }
 }

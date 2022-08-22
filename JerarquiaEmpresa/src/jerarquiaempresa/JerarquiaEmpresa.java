@@ -1,34 +1,215 @@
 package jerarquiaempresa;
 
+import java.util.Scanner;
+// Quiero hacer una base de datos con esto y usar interfases graficas
+// Es mucho mas engorroso ir guardando en arrays
 public class JerarquiaEmpresa {
 
     public static void main(String[] args) {
-        Empleado objEmpleado;
-        Secretario objSecretario;
+        Scanner consola = new Scanner(System.in);
+        String nombre, apellido, dni, direccion, añosEmpresa, telefono, despacho,
+                cocheEmpresa,mensaje;
+        double salario;
+
+        int seleccion;
+        while (true){
+            System.out.println("Ingrese Empleado a Agregar: \n !Tiene que correr "
+                + "denuevo el programa cada vez que quiera agregar un empleado¡ \n ~ 1 = Secretario"
+            + "\n ~ 2 = Vendedor \n ~ 3 = Jefe de la Zona \n ~ 4 = Salir");
+            seleccion = consola.nextInt();
+            if (seleccion == 1){
+                String  numFax;
+                System.out.println(" - Secretario - ");
+                mensaje = consola.nextLine();
+                                System.out.println("Despacho: ");
+                despacho = consola.nextLine();
+                System.out.println("Nummero de Fax: ");
+                numFax = consola.nextLine();
+                System.out.println("Nombre: ");
+                nombre = consola.nextLine();
+                System.out.println("Apellido: ");
+                apellido = consola.nextLine();
+                System.out.println("DNI: ");
+                dni = consola.nextLine();
+                System.out.println("Direccion: ");
+                direccion = consola.nextLine();
+                System.out.println("Años de antiguedad en la empresa: ");
+                añosEmpresa = consola.nextLine();
+                System.out.println("Telefono: ");
+                telefono = consola.nextLine();
+                System.out.println("Salario: ");
+                salario = consola.nextDouble();
+                Secretario objSecretario;
+                objSecretario = new Secretario(despacho, numFax, nombre,
+                        apellido, dni, direccion, añosEmpresa, telefono, salario);
+                while (true) {
+                    System.out.println(" - Secretario - \n ! Las opciones "
+                            + "estaran disponibles hasta seleccionar \"Salir\" !\n "
+                            + "~ 1 = Incrementar Salario + 5% "
+                    + "\n ~ 2 = Imprimir informacion \n ~ 3 = Salir" );
+                    seleccion = consola.nextInt();
+                    System.out.println(seleccion);
+                    
+                    if (seleccion == 1){
+                        System.out.println("El antiguo salario de " + nombre + ": " + salario);
+                        salario = objSecretario.incrementarSalario();
+                        System.out.println("El salario actualizado de " + nombre + ": " + salario);
+                        System.out.println("!Salario de Secretario " +nombre +
+                                " ha incrementado un 5% ¡");
+                    }else if(seleccion == 2){
+                        objSecretario.imprimir();
+                    }else{
+                        break;
+                    }
+                }
+            }else if (seleccion == 2){
+                String telefonoMovil, areaVenta, listaCliente, 
+                        porcentaje; 
+                System.out.println(" - Vendedor - ");
+                mensaje = consola.nextLine();
+                System.out.println("Coche de la Empresa ( matrícula, marca y modelo ): ");
+                cocheEmpresa = consola.nextLine();
+                System.out.println("Telefono Movil: ");
+                telefonoMovil = consola.nextLine();
+                System.out.println("Area de ventas: ");
+                areaVenta = consola.nextLine();
+                System.out.println("Lista de Clientes (Separados por coma \",\"): ");
+                listaCliente = consola.nextLine();
+                System.out.println("Porcentaje que se lleva por concepto de "
+                        + "comisiones: ");
+                porcentaje = consola.nextLine();
+                System.out.println("Nombre: ");
+                nombre = consola.nextLine();
+                System.out.println("Apellido: ");
+                apellido = consola.nextLine();
+                System.out.println("DNI: ");
+                dni = consola.nextLine();
+                System.out.println("Direccion: ");
+                direccion = consola.nextLine();
+                System.out.println("Años de antiguedad en la empresa: ");
+                añosEmpresa = consola.nextLine();
+                System.out.println("Telefono: ");
+                telefono = consola.nextLine();
+                System.out.println("Salario: ");
+                salario = consola.nextDouble();                
+
+                Vendedor objVendedor;
+                objVendedor = new Vendedor(cocheEmpresa, telefonoMovil, areaVenta,
+             listaCliente,  porcentaje, nombre, apellido,
+             dni, direccion, añosEmpresa, telefono, salario);
+                while (true) {
+                    System.out.println(" - Vendedor - \n ! Las opciones estaran "
+                    + "disponibles hasta seleccionar \"Salir\" !\n ~ 1 = "
+                    + "Incrementar Salario +10 "
+                    + "\n ~ 2 = Imprimir informacion \n ~ 3 = Dar de alta "
+                    + "a nuevo cliente \n ~ 4 = Dar de baja acliente \n "
+                    + "~ 5 Cambiar de coche \n ~ 6 = Salir" );
+                    seleccion = consola.nextInt();                    
+                    if (seleccion == 1) {
+                        System.out.println("El antiguo salario de " + nombre + ": " + salario);
+                        salario = objVendedor.incrementarSalario();
+                        System.out.println("El salario actualizado de " + nombre + ": " + salario);
+                        System.out.println("Salario de Vendedor " + nombre +
+                                " ha incrementado un 10%");
+                    }else if (seleccion == 2){
+                        objVendedor.imprimir();
+                    }else if (seleccion == 3){
+                        objVendedor.darDeAltaCliente();
+                    }else if (seleccion == 4){
+                        objVendedor.darDeBajaCliente();
+                    }else if (seleccion == 5){
+                        objVendedor.cambiarCoche();
+                    }else{
+                        break;
+                    }
+                }
+            }else if (seleccion == 3){
+                String secretario, listaVendedores;
+                System.out.println(" - Secretario - ");
+                mensaje = consola.nextLine();
+                System.out.println("Despacho: ");
+                despacho = consola.nextLine();
+                System.out.println("Secretario a su cargo: ");
+                secretario = consola.nextLine();
+                System.out.println("Lista de vendedores: ");
+                listaVendedores = consola.nextLine();
+                System.out.println("Coche de la Empresa: ");
+                cocheEmpresa = consola.nextLine();
+                System.out.println("Nombre: ");
+                nombre = consola.nextLine();
+                System.out.println("Apellido: ");
+                apellido = consola.nextLine();
+                System.out.println("DNI: ");
+                dni = consola.nextLine();
+                System.out.println("Direccion: ");
+                direccion = consola.nextLine();
+                System.out.println("Años de antiguedad en la empresa: ");
+                añosEmpresa = consola.nextLine();
+                System.out.println("Telefono: ");
+                telefono = consola.nextLine();
+                System.out.println("Salario: ");
+                salario = consola.nextDouble();
+                JefeDeZona objJefeDeZona;
+                objJefeDeZona = new JefeDeZona(despacho, secretario, listaVendedores,
+                        cocheEmpresa, nombre, apellido, dni, direccion, 
+                        añosEmpresa,  telefono, salario);
+                System.out.println(seleccion);
+                while (true) {
+                    System.out.println(" - Jefe de Zona - \n ! Las opciones estaran "
+                        + "disponibles hasta seleccionar \"Salir\"! \n ~ 1 = Incrementar "
+                        + "Salario + 20%"
+                        + "\n ~ 2 = Imprimir informacion \n ~ 3 = Cambiar de secretario "
+                        + "a su cargo \n ~ 4 = Cambiar coche \n ~ 5 = Dar de alta a un Vendedor "
+                        + "\n ~ 6 = Dar de baja a vendedor \n ~ 7 = Salir" );
+
+                    seleccion = consola.nextInt();
+                    if (seleccion == 1){
+                        System.out.println("El antiguo salario de " + nombre + ": " + salario);
+                        salario = objJefeDeZona.incrementarSalario();
+                        System.out.println("El salario actualizado de " + nombre + ": " + salario);
+                        System.out.println("Salario de Jefe de la zona " +nombre +
+                                " ha incrementado un 20%");
+                    }else if (seleccion == 2){
+                        objJefeDeZona.imprimir();
+                    }else if (seleccion == 3){
+                        objJefeDeZona.cambiarSecretario();
+                    }else if (seleccion == 4){
+                        objJefeDeZona.cambiarCoche();
+                    }else if (seleccion ==  5){
+                        objJefeDeZona.DarDeAltaVendedor();
+                    }else if (seleccion == 6){
+                        objJefeDeZona.DarDeBajaVendedor();
+                    }else{
+                        break;
+                    }
+                }
+            }else{
+                break;
+            }
+        }
     }
-    
-}
+}    
 
 
 
 //  Consideraciones Generales: 
-// ● El reto deberá ser desarrollado de forma individual por cada tripulante 
-// ● Debe usar los conocimientos vistos en la semana 4 
-// ● Debe tener un contexto real 
-// ● Debe tener un conjunto de requerimientos funcionales bien definidos 
-// ● El reto deberá ser distinto por cada grupo de tripulantes (curso) 
-// ● El reto será calificado con una nota de 0.0 a 5.0 y corresponderá al 20% de la nota final del ciclo 2 
-// ● Debe entregarse y explicarse al beneficiario al finalizar la semana 5 
-// ● El tripulante contará con una semana de plazo para el desarrollo del reto 
+// * ● El reto deberá ser desarrollado de forma individual por cada tripulante 
+// * ● Debe usar los conocimientos vistos en la semana 4 
+// * ● Debe tener un contexto real 
+// * ● Debe tener un conjunto de requerimientos funcionales bien definidos 
+// * ● El reto deberá ser distinto por cada grupo de tripulantes (curso) 
+// * ● El reto será calificado con una nota de 0.0 a 5.0 y corresponderá al 20% de la nota final del ciclo 2 
+// * ● Debe entregarse y explicarse al beneficiario al finalizar la semana 5 
+// ! ● El tripulante contará con una semana de plazo para el desarrollo del reto 
 
-// Problemática a resolver (Contexto): 
-// Se pretende desarrollar un conjunto de clases que representen, de forma simplificada, a una hipotética empresa dedicada a vender un producto. A continuación, se describen las características básicas de estas clases: 
-// 1. Empleado. Clase básica que describe a un empleado. Incluye sus datos 
-// personales (nombre, apellidos, documento y dirección) 
-// Tendrá, al menos, los siguientes métodos: 
-// • Constructores para definir correctamente un empleado, a partir de su nombre, 
-// apellidos, documento y dirección. 
-// • Imprimir (A través de los operadores de E/S redefinidos) 
+// * Problemática a resolver (Contexto): 
+// * Se pretende desarrollar un conjunto de clases que representen, de forma simplificada, a una hipotética empresa dedicada a vender un producto. A continuación, se describen las características básicas de estas clases: 
+// * 1. Empleado. Clase básica que describe a un empleado. Incluye sus datos 
+// * personales (nombre, apellidos, documento y dirección) 
+// * Tendrá, al menos, los siguientes métodos: 
+// * • Constructores para definir correctamente un empleado, a partir de su nombre, 
+// * apellidos, documento y dirección. 
+// * • Imprimir (A través de los operadores de E/S redefinidos) 
 // 2. Secretario. Tiene despacho y número de teléfono. 
 // Tendrá, al menos, los siguientes métodos: 
 // • Constructores (debe rellenar la información personal y los datos principales) 

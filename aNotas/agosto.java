@@ -28,3 +28,6 @@ package aNotas;
     // Eventos: Acciones
 
     // Aprender a usar Interfas Grafica de Usuario(GUI) Swing J-Frame (Programas sin terminales :>)
+// * 21.08.DO
+    // ? Una interfas se usa para "reutilizar" metodos
+    // ? Mientras que una clase abstracta se usa para "reutilizar" atributos
