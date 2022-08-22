@@ -9,6 +9,7 @@ package jerarquiaempresa;
  *
  * @author USUARIO
  */
-public class Secretario {
+public class Jefe extends Empleado{
+    private 
     
 }
