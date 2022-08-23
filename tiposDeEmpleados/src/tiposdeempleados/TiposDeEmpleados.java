@@ -1,9 +1,8 @@
-package jerarquiaempresa;
+package tiposdeempleados;
 
 import java.util.Scanner;
-// Quiero hacer una base de datos con esto y usar interfases graficas
-// Es mucho mas engorroso ir guardando en arrays
-public class JerarquiaEmpresa {
+
+public class TiposDeEmpleados {
 
     public static void main(String[] args) {
         Scanner consola = new Scanner(System.in);

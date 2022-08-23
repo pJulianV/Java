@@ -1,4 +1,4 @@
-package jerarquiaempresa;
+package tiposdeempleados;
 
 public class JefeDeZona extends Empleado{
     private String despacho;
