@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tiposempleados">
+  <ClassDiagramComponents>
+    <Class name="Empleado" package="tiposempleados" visibility="public" xPosition="446.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="documento" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="documento"/>
+          <Argument type="String" name="direccion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="getDocumento" returnType="String" visibility="public"/>
+        <Method name="setDocumento" returnType="void" visibility="public">
+          <Argument type="String" name="documento"/>
+        </Method>
+        <Method name="imprimir" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="JefeDeZona" package="tiposempleados" visibility="public" xPosition="19.0" yPosition="441.0">
+      <Fields>
+        <Field name="despacho" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="despacho"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="despacho"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="documento"/>
+          <Argument type="String" name="direccion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDespacho" returnType="String" visibility="public"/>
+        <Method name="setDespacho" returnType="void" visibility="public">
+          <Argument type="String" name="despacho"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="imprimir" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Secretario" package="tiposempleados" visibility="public" xPosition="356.0" yPosition="754.0">
+      <Fields>
+        <Field name="despacho" type="String" visibility="private"/>
+        <Field name="telefono" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="despacho"/>
+          <Argument type="String" name="telefono"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="despacho"/>
+          <Argument type="String" name="telefono"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="documento"/>
+          <Argument type="String" name="direccion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDespacho" returnType="String" visibility="public"/>
+        <Method name="setDespacho" returnType="void" visibility="public">
+          <Argument type="String" name="despacho"/>
+        </Method>
+        <Method name="getTelefono" returnType="String" visibility="public"/>
+        <Method name="setTelefono" returnType="void" visibility="public">
+          <Argument type="String" name="telefono"/>
+        </Method>
+        <Method name="imprimir" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TiposEmpleados" package="tiposempleados" visibility="public" xPosition="105.0" yPosition="153.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Vendedor" package="tiposempleados" visibility="public" xPosition="714.0" yPosition="441.0">
+      <Fields>
+        <Field name="areaVenta" type="String" visibility="private"/>
+        <Field name="comision" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="documento"/>
+          <Argument type="String" name="direccion"/>
+          <Argument type="String" name="areaVenta"/>
+          <Argument type="String" name="comision"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getAreaVenta" returnType="String" visibility="public"/>
+        <Method name="setAreaVenta" returnType="void" visibility="public">
+          <Argument type="String" name="areaVenta"/>
+        </Method>
+        <Method name="getComision" returnType="String" visibility="public"/>
+        <Method name="setComision" returnType="void" visibility="public">
+          <Argument type="String" name="comision"/>
+        </Method>
+        <Method name="imprimir" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="tiposempleados.JefeDeZona" target="tiposempleados.Empleado"/>
+    <IsRelation name="is" source="tiposempleados.Vendedor" target="tiposempleados.Empleado"/>
+    <IsRelation name="is" source="tiposempleados.Secretario" target="tiposempleados.Empleado"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
