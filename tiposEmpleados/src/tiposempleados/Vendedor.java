@@ -33,3 +33,4 @@ public class Vendedor extends Empleado{
         System.out.println( areaVenta + " || " + comision );
     }
 }
+// Hola
